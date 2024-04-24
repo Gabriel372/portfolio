@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        'custom-black': 'rgba(0, 0, 0, 0.5)'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -53,12 +56,12 @@ screens: {
   'h-screen300': {'raw': '(max-height: 300px)'},
   'h-screen250': {'raw': '(max-height: 250px)'},  
 },
-boxShadow: {
-  '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.6)',
-  '4xl': '0 35px 60px -15px rgba(0, 0, 0, 0.9)',
-  '5xl': '0 35px 60px -15px rgba(0, 0, 0, 12)',
+// boxShadow: {
+//   '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.6)',
+//   '4xl': '0 35px 60px -15px rgba(0, 0, 0, 0.9)',
+//   '5xl': '0 35px 60px -15px rgba(0, 0, 0, 12)',
 
-},
+// },
 animation: {
   float: 'float 3.5s infinite',
 },

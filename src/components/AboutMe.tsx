@@ -15,10 +15,10 @@ return ()=> clearInterval(Interval)
 },[])
 
 
-return (<section className=" flex w-full justify-evenly mb-7 mt-5 ">
+return (<section className=" flex w-full justify-evenly mb-7 mt-5 w-screen800:mb-0">
 
-<div className=" shadow-2xl rounded-tl-3xl rounded-br-3xl animate-float w-screen900:hidden"> 
-<div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[350px]">
+<div className="rounded-tl-3xl rounded-br-3xl animate-float w-screen900:hidden"> 
+<div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[350px] shadow-2xl">
     <Image src={imgProfile} alt='image' height={500} className=""/>
 </div>
 </div>
@@ -36,9 +36,9 @@ return (<section className=" flex w-full justify-evenly mb-7 mt-5 ">
 </div>
 
 
-<div className=" shadow-2xl rounded-tl-3xl rounded-br-3xl animate-float hidden w-screen900:flex justify-center"> 
-<div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[310px]">
-    <Image src={imgProfile} alt='image' height={500} className=""/>
+<div className="  rounded-tl-3xl rounded-br-3xl animate-float hidden w-screen900:flex justify-center"> 
+<div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[310px] shadow-2xl">
+    <Image src={imgProfile} alt='image'  height={500} className=" "/>
 </div>
 </div>
 
@@ -51,7 +51,7 @@ Gosto de tecnologia e ver o resultado do meu trabalho gerar uma boa experiência
 
 {/* <div className="flex flex-row justify-around mt-2"> */}
 {/* <div className="grid mt-2 grid-cols-3 gap-x-1"> */}
-<div className="flex mt-2 flex-wrap gap-1 justify-center"> 
+<div className="flex mt-2 flex-wrap gap-1 justify-center w-screen500:justify-start"> 
 
 <Link className=' bg-black text-white rounded-lg px-2 flex flex-row items-center py-2 justify-center w-full hover:bg-gray-700 max-w-[150px] max-h-10' 
 href='https://www.linkedin.com/in/gabriel-brand%C3%A3o-42174223a/'>

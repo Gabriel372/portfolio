@@ -8,10 +8,10 @@ import { SiFirebase } from "react-icons/si";
 import Link from 'next/link';
 import { TbWorldWww } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
+import { TstateModalProject } from '@/types/Types';
 
-
-function catalogProject() {
-const StyleForTechs = 'ml-2 bg-gray-200 pb-1 px-1 rounded-lg flex flex-row max-w-24 items-center'  
+function catalogProject({Modal,setModal}:TstateModalProject) {
+const StyleForTechs = 'bg-gray-200 pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
     
 
 
@@ -24,11 +24,11 @@ return (<li className=' max-w-[400px] bg-slate-100 rounded-2xl border-gray-200 b
 <div className=' mb-4 flex w-full justify-center max-h-96'>
 
 <div className=' flex max-w-[350px] w-screen400:max-w-[250px]'>
-<Image src={CatalogDesktopImg} alt='image' 
-className=" border-black rounded-xl border-8 inline max-h-40 "/>
+<Image src={CatalogDesktopImg} alt='image' onClick={()=> {setModal({IsOpen:true,img:CatalogDesktopImg} ) } }
+className=" border-black rounded-xl border-8 inline max-h-40 cursor-pointer"/>
 
-<Image src={CatalogMobileImg} alt='image' height={160} 
-className="border-black rounded-xl border-4 inline z-10 relative right-10 top-5 max-h-[150px]"/>
+<Image src={CatalogMobileImg} alt='image' height={160} onClick={()=> setModal({IsOpen:true,img:CatalogMobileImg})}
+className="border-black rounded-xl border-4 inline z-10 relative right-10 top-5 max-h-[150px] cursor-pointer"/>
 
 </div>
 
@@ -42,7 +42,7 @@ que são exibidos na página inicial. Eles também podem adicionar um título pa
 
 </div>
 
-<div className='mt-4 flex flex-wrap text-lg'><b className=''>Tecnologias utilizadas:</b>
+<div className='mt-4 flex flex-wrap text-lg gap-1'><b className=''>Tecnologias utilizadas:</b>
 <span className={`${StyleForTechs}`}><FaReact className=' mr-[2px]'/> React Js</span>
 <span className={`${StyleForTechs}`}><SiTypescript className=' mr-[2px]'/> Typescript</span>
 <span className={`${StyleForTechs}`}><SiTailwindcss className=' mr-[2px]'/> Tailwind</span>

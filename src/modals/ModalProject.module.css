@@ -1,0 +1,34 @@
+.squareMod{
+    border: 1px solid gray;   
+    border-radius: 5px;
+    /* height: 110px;
+    width: 100px; */
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+  }
+.bgBlack{
+background-color: black;
+
+}
+.bgWhite{
+  background-color: white;
+  
+}
+.btnCloseMod{
+/* display: block; */
+display: flex;
+justify-content: end;
+width: 100%;
+text-align: right;
+/* margin-left: auto; */
+  padding:0 5px 5px 0;
+font-size: 2rem;
+cursor: pointer;
+color: white;
+}
+
+
+
