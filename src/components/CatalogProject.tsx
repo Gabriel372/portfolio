@@ -12,7 +12,7 @@ import { TstateModalProject,TstateTheme } from '@/types/Types';
 import { useContext } from 'react';
 import { MyContext } from '@/context/MyContext';
 
-function catalogProject({Modal,setModal}:TstateModalProject) {
+function CatalogProject({Modal,setModal}:TstateModalProject) {
 const StyleForTechs = ' pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
 const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700'
@@ -71,6 +71,6 @@ className=' bg-black text-white rounded-lg px-2 flex flex-row items-center py-2 
 
 }
 
-export default catalogProject ;
+export default CatalogProject ;
 
 

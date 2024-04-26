@@ -14,7 +14,7 @@ const ActualThemeIsDark = typeof window !== 'undefined' ? JSON.parse(localStorag
 useEffect(()=>{
 // CheckUserModeTheme() 
 setThemeIsDark(ActualThemeIsDark);
-},[])
+})
 
 function ToggleTheme() {
 localStorage.setItem('ActualThemeIsDark',`${!ThemeIsDark}`);
