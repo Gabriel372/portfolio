@@ -11,7 +11,7 @@ function ModalProject({Modal,setModal}:TstateModalProject) {
 
 return (<>
 { Modal.IsOpen && <div onClick={()=>setModal({IsOpen:false,img:''})}
-   className={`fixed w-full h-full top-0 flex justify-center items-center   left-0 bg-custom-black py-2`} >
+   className={` w-full h-full top-0 flex justify-center items-center   left-0 bg-custom-black py-2 fixed`} >
 
 
 <div className={`${style.dadSquare}`}>

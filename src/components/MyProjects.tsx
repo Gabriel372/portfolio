@@ -19,6 +19,7 @@ return (<section className=' flex flex-col justify-around mb-8'>
 </ul>
 
 <ModalProject Modal={Modal} setModal={setModal}/>
+
 </section> 
 
 )
