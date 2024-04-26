@@ -15,7 +15,7 @@ const StyleForTechs = 'bg-gray-200 pb-1 px-1 rounded-lg flex flex-row max-w-26 i
     
 
 
-return (<li className=' max-w-[400px] bg-slate-100 rounded-2xl border-gray-200 border px-1 py-3 shadow-3xl transform transition-transform duration-200 hover:-translate-y-1 '>
+return (<li className=' max-w-[400px] bg-slate-100 rounded-2xl border-gray-200 border px-1 py-3 shadow-2xl transform transition-transform duration-200 hover:-translate-y-1 '>
 
 <div>
 
@@ -35,7 +35,7 @@ className="border-black rounded-xl border-4 inline z-10 relative right-10 top-5 
 </div>
 
 <div>
-<h4  className=" text-2xl">Catálogo de produtos</h4>
+<h4  className=" text-2xl mb-2">Catálogo de produtos</h4>
 
 <p className=' text-lg'>catálogo online personalizável.Usuários cadastrados podem gerenciar produtos, 
 que são exibidos na página inicial. Eles também podem adicionar um título para exibição.</p>

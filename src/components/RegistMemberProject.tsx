@@ -18,7 +18,7 @@ function RegistMemberProject({Modal,setModal}:TstateModalProject) {
 
     
 
-return (<li className='  max-w-[400px] bg-slate-100 rounded-2xl border-gray-200 border px-1 py-3 shadow-3xl transform transition-transform duration-200 hover:-translate-y-1 '>
+return (<li className='  max-w-[400px] bg-slate-100 rounded-2xl border-gray-200 border px-1 py-3 shadow-2xl transform transition-transform duration-200 hover:-translate-y-1 '>
 
     <div>
     
@@ -38,7 +38,7 @@ return (<li className='  max-w-[400px] bg-slate-100 rounded-2xl border-gray-200 
     </div>
     
     <div>
-    <h4  className=" text-2xl">Cadastrador de membros</h4>
+    <h4  className=" text-2xl mb-2">Cadastrador de membros</h4>
     
     <p className=' text-xl'>É um cadastrador onde o usuário se cadastra para gerenciar os membros registrados, incluindo a capacidade de adicionar fotos aos seus perfis.</p>
     

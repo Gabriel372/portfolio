@@ -1,24 +1,46 @@
+import { IoIosSunny } from "react-icons/io";
+import { FaMoon } from "react-icons/fa";
+import {useContext, useEffect} from "react";
+import { TstateTheme } from "@/types/Types";
+import { MyContext } from "@/context/MyContext";
+
+
 function BtnToggleMode() {
+const {ThemeIsDark,setThemeIsDark} = useContext(MyContext) as TstateTheme ;
+// const ActualThemeIsDark =  JSON.parse(localStorage.getItem('ActualThemeIsDark') || 'null')
+const ActualThemeIsDark = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('ActualThemeIsDark') || 'null') : null;
 
-//CRIAR CONTEXTO 
 
-//CRIAR STATE MODETHEME
+useEffect(()=>{
+// CheckUserModeTheme() 
+setThemeIsDark(ActualThemeIsDark);
+},[])
 
-//CRIAR ALTERNACAO PARA STATE E LS
+function ToggleTheme() {
+localStorage.setItem('ActualThemeIsDark',`${!ThemeIsDark}`);
+setThemeIsDark(!ThemeIsDark) ;
+}
 
-//VERIFICAR SE O USUARIO PREFERE TEMA ESCURO OU CLARO P/ APLICAR NO STATE
-
+// function CheckUserModeTheme() {
 // if (typeof window !== "undefined") {
 //     const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   
-//     if (isDarkMode) {
-//       console.log("O usuário prefere o tema escuro");
-//     } else {
-//       console.log("O usuário prefere o tema claro");
-//     }
-//   }
-    
-return (<button onClick={()=> console.log('ok')}>BtnToggleMode</button>)
+// if (isDarkMode) {
+// localStorage.setItem('ActualThemeIsDark',`${true}`);
+// setThemeIsDark(true)
+// } else {
+//  localStorage.setItem('ActualThemeIsDark',`${false}`);
+//  setThemeIsDark(false)
+// }
+//   }    
+// }
+
+
+
+return (<button onClick={ToggleTheme}>
+ {ThemeIsDark ? <IoIosSunny className=" text-2xl"/> : <FaMoon />} 
+
+</button>)
 
 }
 

@@ -14,8 +14,8 @@ import FirebaseImg from '../images/firebaseLogo.png'
 import { ReactText,TypescriptText,NextText,TailwindText,CssText,HtmlText,GitText,GithubText,FirebaseText,BoostrapText,JavascriptText } from './Content'
 
 function MyTechsForMobile() {
-const StyleForLi = `cursor-pointer flex flex-col rounded-xl px-2 pb-1  shadow-2xl border 
-w-screen550:text-sm w-screen550:ml-1 w-screen450:text-[11px] w-screen550:px-[2px] w-screen550:rounded-md justify-center items-center` 
+const StyleForLi = `cursor-pointer flex flex-col rounded-xl px-2 pb-1  shadow-2xl border   
+w-screen550:text-sm  w-screen450:text-[11px] w-screen550:px-1 w-screen550:rounded-md justify-center items-center` 
 const StyleForImg = 'max-w-14 w-screen500:max-w-10'
 const [TechClicked,setTechClicked] = useState<string>('react')
 
@@ -56,7 +56,7 @@ return (
         
 <div className=' flex flex-col w-full items-center'>
         
-<ul className=' flex  w-full justify-end flex-wrap gap-2'>
+<ul className=' flex  w-full justify-center flex-wrap gap-2'>
         
 <li className={`${StyleForLi} ${TechClicked === 'react' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
 onClick={()=> setTechClicked('react') }><b className=''
@@ -84,7 +84,7 @@ onClick={()=> setTechClicked('bootstrap') }><b>Bootstrap</b>
 onClick={()=> setTechClicked('javascript') }><b>Javascript</b>
  <Image src={JavascriptImg} alt='image'   className={`${StyleForImg}`}/></li>
         
-<li className={`${StyleForLi} ${TechClicked === 'css' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
+<li className={`${StyleForLi} ${TechClicked === 'css' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'} `} 
 onClick={()=> setTechClicked('css') }><b>Css 3</b>
 <Image src={CssImg} alt='image'  className={`${StyleForImg}`}/></li>
         
@@ -102,8 +102,10 @@ onClick={()=> setTechClicked('firebase') }><b>Firebase</b>
 
 </ul>
 
-<p className='  bg-white border rounded-xl text-lg p-1 w-full border-x-gray-300 border-b-gray-300 border-t-0 pt-2 min-h-[240px] mb-3 shadow-2xl mt-2'>
+<p className='  bg-white border rounded-xl text-lg p-1 w-full border-gray-200 pt-2 min-h-[240px] mb-3 shadow-2xl mt-2'>
  {`${ReturnText()}`}   
+ {TechClicked === 'git' && <p>{GithubText}</p> } 
+
 </p>
 
 <ul className=' flex  flex-row max-w-[500px] w-full justify-end'>

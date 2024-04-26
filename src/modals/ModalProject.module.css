@@ -1,13 +1,11 @@
 .squareMod{
     border: 1px solid gray;   
     border-radius: 5px;
-    /* height: 110px;
-    width: 100px; */
     padding: 0 10px 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
+    border: none;
   }
 .bgBlack{
 background-color: black;
@@ -18,17 +16,30 @@ background-color: black;
   
 }
 .btnCloseMod{
-/* display: block; */
 display: flex;
 justify-content: end;
 width: 100%;
 text-align: right;
-/* margin-left: auto; */
   padding:0 5px 5px 0;
 font-size: 2rem;
 cursor: pointer;
 color: white;
 }
+.themeDark{
+  background-color: black;
+  color: white; 
+ }
+ 
 
+@media only screen and (max-height: 500px) {
+  .dadSquare {
+      overflow-y: scroll;
+      height: 100%;
+}
+.squareMod{
+  max-height: 130vh;
+
+}
+}
 
 

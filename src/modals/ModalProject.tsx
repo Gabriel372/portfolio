@@ -11,13 +11,13 @@ function ModalProject({Modal,setModal}:TstateModalProject) {
 
 return (<>
 { Modal.IsOpen && <div onClick={()=>setModal({IsOpen:false,img:''})}
-   className={`fixed w-full h-full top-0 flex justify-center items-center   left-0 bg-custom-black `} >
+   className={`fixed w-full h-full top-0 flex justify-center items-center   left-0 bg-custom-black py-2`} >
 
 
-<div>
-<p className={style.btnCloseMod}> <IoClose /></p>
+<div className={`${style.dadSquare}`}>
+<p className={`${style.btnCloseMod}`}> <IoClose/></p>
 <Image onClick={(e)=> e.stopPropagation()} src={Modal.img} alt="imagem"
-className={`${style.squareMod } ${isBlack ? style.bgBlack : style.bgWhite}`}/>
+className={`${style.squareMod }`}/>
 
 </div>
 

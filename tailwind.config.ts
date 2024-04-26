@@ -21,8 +21,6 @@ fontFamily: {
   'combined': ['Alumni Sans Inline One', 'Open Sans', 'Press Start 2P', 'sans-serif'],
 },
 
-
-
 },
 screens: {
   'w-screen1050': {'max': '1050px'},
@@ -72,12 +70,6 @@ keyframes: {
     '100%': { transform: 'translateY(0px)' },
   },
 },
-
-
-
-
-
-
 
 },
   plugins: [],
