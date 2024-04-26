@@ -1,5 +1,4 @@
-import { useState  } from "react"
-import { Ttech } from "@/types/Types"
+import { useState,useContext  } from "react"
 import Image from 'next/image'
 import ReactImg from '../images/react3d.webp'
 import TypescriptImg from '../images/ts3d.webp'
@@ -12,30 +11,18 @@ import Htmlimg from '../images/html3d.png'
 import GitImg from '../images/git3d.webp'
 import FirebaseImg from '../images/firebaseLogo.png'
 import { ReactText,TypescriptText,NextText,TailwindText,CssText,HtmlText,GitText,GithubText,FirebaseText,BoostrapText,JavascriptText } from './Content'
+import { MyContext } from "@/context/MyContext"
+import { TstateTheme } from "@/types/Types"
 
 function MyTechsForMobile() {
 const StyleForLi = `cursor-pointer flex flex-col rounded-xl px-2 pb-1  shadow-2xl border   
 w-screen550:text-sm  w-screen450:text-[11px] w-screen550:px-1 w-screen550:rounded-md justify-center items-center` 
 const StyleForImg = 'max-w-14 w-screen500:max-w-10'
 const [TechClicked,setTechClicked] = useState<string>('react')
+const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
+const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700'
+:'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-x-gray-300 border-t-gray-300 border-b-gray-300' ;
 
-// const [TechClicked,setTechClicked] = useState<Ttech>({group1:'react',group2:'javascript'})
-
-// function ReturnTextForGroup1() {
-// return (TechClicked.group1 === 'react' && ReactText) ||
-// (TechClicked.group1 === 'typescript' && TypescriptText) ||
-// (TechClicked.group1 === 'next' && NextText) ||
-//  (TechClicked.group1 === 'tailwind' && TailwindText) ||
-// (TechClicked.group1 === 'bootstrap' && BoostrapText)
-// }
-
-// function ReturnTextForGroup2() {
-//     return (TechClicked.group2 === 'javascript' && JavascriptText) ||
-//     (TechClicked.group2 === 'css' && CssText) ||
-//     (TechClicked.group2 === 'html' && HtmlText) ||
-//      (TechClicked.group2 === 'git' && GitText) ||
-//     (TechClicked.group2 === 'firebase' && FirebaseText)
-// }
 function ReturnText() {
     return (TechClicked === 'react' && ReactText) ||
         (TechClicked === 'typescript' && TypescriptText) ||
@@ -47,8 +34,15 @@ function ReturnText() {
         (TechClicked === 'html' && HtmlText) ||
         (TechClicked === 'git' && GitText) ||
         (TechClicked === 'firebase' && FirebaseText)
+}
+function CatchTechGiveStyle (tech:string ){
+    if (ThemeIsDark) {
+    return (tech === TechClicked ? 'bg-gray-700' : 'bg-gray-900  border-gray-500' ) 
     }
-
+    else {
+    return (tech === TechClicked ? 'bg-white border-b-0 ' : 'bg-gray-200  border-b-gray-300' ) 
+    }
+    }
 
 return (
 <section className=' mt-4 hidden w-screen1050:flex flex-col mb-2'>
@@ -56,53 +50,53 @@ return (
         
 <div className=' flex flex-col w-full items-center'>
         
-<ul className=' flex  w-full justify-center flex-wrap gap-2'>
+<ul className=' flex  w-full justify-center flex-wrap gap-2 mb-2'>
         
-<li className={`${StyleForLi} ${TechClicked === 'react' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
+<li className={`${StyleForLi} ${CatchTechGiveStyle('react')}`} 
 onClick={()=> setTechClicked('react') }><b className=''
  >React js</b>
 <Image src={ReactImg} alt='image'   className={`${StyleForImg}`}/>
 </li>
         
- <li className={`${StyleForLi} ${TechClicked === 'typescript' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
+ <li className={`${StyleForLi} ${CatchTechGiveStyle('typescript')}`} 
 onClick={()=> setTechClicked('typescript') }><b>Typescript</b>
 <Image src={TypescriptImg} alt='image'  className={`${StyleForImg}`}/></li>
         
-<li className={`${StyleForLi} ${TechClicked === 'next' ? 'bg-white border-black ': 'bg-gray-200  border-b-gray-300'}`}
+<li className={`${StyleForLi} ${CatchTechGiveStyle('next')}`}
 onClick={()=> setTechClicked('next') }><b>Next js</b>
   <Image src={NextImg} alt='image'  className={`${StyleForImg}`}/></li>
         
-   <li className={`${StyleForLi} ${TechClicked === 'tailwind' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
+   <li className={`${StyleForLi} ${CatchTechGiveStyle('tailwind')}`} 
 onClick={()=> setTechClicked('tailwind') }><b>Tailwind</b>
 <Image src={TailwindImg} alt='image'   className={`${StyleForImg}`}/></li>
         
-<li className={`${StyleForLi} ${TechClicked === 'bootstrap' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
+<li className={`${StyleForLi} ${CatchTechGiveStyle('bootstrap')}`} 
 onClick={()=> setTechClicked('bootstrap') }><b>Bootstrap</b>
 <Image src={BootstrapImg} alt='image' className={`${StyleForImg}`}/></li>
 
-<li className={`${StyleForLi} ${TechClicked === 'javascript' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'} `} 
+<li className={`${StyleForLi} ${CatchTechGiveStyle('javascript')} `} 
 onClick={()=> setTechClicked('javascript') }><b>Javascript</b>
  <Image src={JavascriptImg} alt='image'   className={`${StyleForImg}`}/></li>
         
-<li className={`${StyleForLi} ${TechClicked === 'css' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'} `} 
+<li className={`${StyleForLi} ${CatchTechGiveStyle('css')} `} 
 onClick={()=> setTechClicked('css') }><b>Css 3</b>
 <Image src={CssImg} alt='image'  className={`${StyleForImg}`}/></li>
         
- <li className={`${StyleForLi} ${TechClicked === 'html' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
+ <li className={`${StyleForLi} ${CatchTechGiveStyle('html')}`} 
 onClick={()=> setTechClicked('html') }><b>Html 5</b>
  <Image src={Htmlimg} alt='image' className={`${StyleForImg}`}/></li>
         
-<li className={`${StyleForLi} ${TechClicked === 'git' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
+<li className={`${StyleForLi} ${CatchTechGiveStyle('git')}`} 
 onClick={()=> setTechClicked('git') }><b>Git/Github</b>
 <Image src={GitImg} alt='image' className={`${StyleForImg}`}/></li>
         
- <li className={`${StyleForLi} ${TechClicked === 'firebase' ? 'bg-white border-black ' : 'bg-gray-200  border-b-gray-300'}`} 
+ <li className={`${StyleForLi} ${CatchTechGiveStyle('firebase')}`} 
 onClick={()=> setTechClicked('firebase') }><b>Firebase</b>
  <Image src={FirebaseImg} alt='image' className={`${StyleForImg}`}/></li>       
 
 </ul>
 
-<p className='  bg-white border rounded-xl text-lg p-1 w-full border-gray-200 pt-2 min-h-[240px] mb-3 shadow-2xl mt-2'>
+<p className={`${ThemeForComponent}   border rounded-xl text-lg p-1 w-full pt-2 min-h-[240px] mb-3 shadow-2xl mt-2'`}>
  {`${ReturnText()}`}   
  {TechClicked === 'git' && <p>{GithubText}</p> } 
 
@@ -110,15 +104,8 @@ onClick={()=> setTechClicked('firebase') }><b>Firebase</b>
 
 <ul className=' flex  flex-row max-w-[500px] w-full justify-end'>
 
-
-
 </ul>
-    
- {/* <p className='max-w-[500px]  bg-white shadow-3xl border rounded-b-xl text-lg p-1 w-full border-x-gray-300 border-b-gray-300 border-t-0 pt-2 min-h-[240px] shadow-2xl'>
- {`${ReturnTextForGroup2()}`}   
-{TechClicked.group2 === 'git' && <p>{GithubText}</p> } 
-</p> */}
-        
+      
 </div>
         
  </section>

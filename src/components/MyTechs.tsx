@@ -16,24 +16,21 @@ import { TstateTheme } from '@/types/Types'
 
 function MyTechs() {
     const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
-const StyleForLi = 'cursor-pointer flex flex-col rounded-t-xl px-2 pb-1  shadow-2xl border ml-3 '
 const [TechClicked,setTechClicked] = useState<string>('react') ;
+
+const StyleForLi = 'cursor-pointer flex flex-col rounded-t-xl px-2 pb-1  shadow-2xl border ml-3 '
 const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500 bg-gray-500 border-x-gray-500  border-b-gray-700'
 :'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-x-gray-300 border-t-gray-300 border-b-gray-300'
-//<p className={`max-w-[1020px]  shadow-2xl border ml-3 rounded-b-xl text-lg p-1 w-full border-x-gray-300 border-b-gray-300 border-t-0 pt-2 min-h-[150px]`}>
 
+function CatchTechGiveStyle (tech:string ){
+    if (ThemeIsDark) {
+    return (tech === TechClicked ? 'bg-gray-800 border-b-0 ' : 'bg-gray-900  border-gray-500 border-b-gray-500' ) 
+    }
+    else {
+    return (tech === TechClicked ? 'bg-white border-b-0 ' : 'bg-gray-200  border-b-gray-300' ) 
+    }
+    }
 
-const StyleLigth = TechClicked === 'react' ? 'bg-white border-b-0 ' : 'bg-gray-200  border-b-gray-300'
-const StyleDark = TechClicked === 'react' ? 'bg-white border-b-0 ' : 'bg-gray-200  border-b-gray-300'
-
-function CatchTechGiveStyle(tech:string) {
-if (ThemeIsDark) {
-return (tech === TechClicked ? 'bg-gray-800 border-b-0 ' : 'bg-gray-900  border-gray-500' ) 
-}
-else {
-return (tech === TechClicked ? 'bg-white border-b-0 ' : 'bg-gray-200  border-b-gray-300' ) 
-}
-}
 
 function ReturnText() {
 return (TechClicked === 'react' && ReactText) ||

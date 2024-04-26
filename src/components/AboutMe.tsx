@@ -72,7 +72,6 @@ WhatsApp</Link>
 
 
 </div>
-<button onClick={()=>console.log(ThemeIsDark)}>teste 222</button>
 </section>)    
 }
 

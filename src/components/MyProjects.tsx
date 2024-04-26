@@ -19,14 +19,6 @@ return (<section className=' flex flex-col justify-around mb-8'>
 </ul>
 
 <ModalProject Modal={Modal} setModal={setModal}/>
-   {/* <ModalProject Modal={Modal} setModal={setModal}/> */}
-
-{/* <div className=' fixed w-full h-full top-0 flex justify-center items-center   left-0 bg-custom-black'>
-    <div className=' h-10 w-10 bg-green-500'></div>
-    
-    aaaaaaa</div> */}
-
-
 </section> 
 
 )

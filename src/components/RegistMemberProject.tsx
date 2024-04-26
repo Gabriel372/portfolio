@@ -9,16 +9,19 @@ import Link from 'next/link';
 import { TbWorldWww } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
-import { TstateModalProject } from '@/types/Types';
-
-
+import { TstateModalProject,TstateTheme } from '@/types/Types';
+import { useContext } from 'react';
+import { MyContext } from '@/context/MyContext';
 
 function RegistMemberProject({Modal,setModal}:TstateModalProject) {
-    const StyleForTechs = ' bg-gray-200 pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
+    const StyleForTechs = ' pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
+    const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
+    const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700'
+    :'duration-500 bg-white  from-gray-600 to-white bg-slate-100 border-gray-100 ' ; 
+    const TheForTech = ThemeIsDark ? 'bg-slate-900':
+    'bg-gray-200' ;  
 
-    
-
-return (<li className='  max-w-[400px] bg-slate-100 rounded-2xl border-gray-200 border px-1 py-3 shadow-2xl transform transition-transform duration-200 hover:-translate-y-1 '>
+    return (<li className={`${ThemeForComponent} max-w-[400px]  rounded-2xl  border px-1 py-3 shadow-2xl transform transition-transform duration-200 hover:-translate-y-1`}>
 
     <div>
     
@@ -45,20 +48,20 @@ return (<li className='  max-w-[400px] bg-slate-100 rounded-2xl border-gray-200 
     </div>
     
     <div className='mt-4 flex flex-wrap text-lg gap-1'><b className=''>Tecnologias utilizadas:</b>
-    <span className={`${StyleForTechs}`}><FaReact className=' mr-[2px]'/> React Js</span>
-    <span className={`${StyleForTechs}`}><SiTypescript className=' mr-[2px] '/> Typescript</span>
-    <span className={`${StyleForTechs}`}><FaCss3Alt className=' mr-[2px]'/> Css</span>
-    <span className={`${StyleForTechs}`}><SiFirebase className=' mr-[2px]'/> Firebase</span>
+    <span className={`${StyleForTechs} ${TheForTech}`}><FaReact className=' mr-[2px]'/> React Js</span>
+    <span className={`${StyleForTechs} ${TheForTech}`}><SiTypescript className=' mr-[2px] '/> Typescript</span>
+    <span className={`${StyleForTechs} ${TheForTech}`}><FaCss3Alt className=' mr-[2px]'/> Css</span>
+    <span className={`${StyleForTechs} ${TheForTech}`}><SiFirebase className=' mr-[2px]'/> Firebase</span>
     </div>
     
     <div className=' mt-4 flex flex-row justify-around'>
     
     <Link href='https://gabriel372.github.io/cadastro-de-membros/'
-    className=' bg-black text-white rounded-lg px-2 flex flex-row items-center max-w-36 py-2 justify-center w-full hover:bg-gray-700'>
+    className=' bg-black text-white rounded-lg px-2 flex flex-row items-center max-w-36 py-2 justify-center w-full hover:bg-gray-700 border border-gray-700'>
     <TbWorldWww className=' mr-[2px] text-xl'/>Ver site</Link>
     
     <Link href='https://github.com/Gabriel372/cadastro-de-membros'
-    className=' bg-black text-white rounded-lg px-2 flex flex-row items-center py-2 justify-center max-w-36 w-full hover:bg-gray-700'>
+    className=' bg-black text-white rounded-lg px-2 flex flex-row items-center py-2 justify-center w-full hover:bg-gray-700 max-h-11 border border-gray-700 max-w-40'>
     <FaGithub className=' mr-[2px] text-xl'/>Ver repositório</Link>
     
     </div>
