@@ -8,7 +8,7 @@ import JavascriptImg from '../images/js3d.webp'
 import CssImg from '../images/css3d.png'
 import Htmlimg from '../images/html3d.png'
 import GitImg from '../images/git3d.webp'
-import FirebaseImg from '../images/firebaseLogo.png'
+import FirebaseImg from '../images/firebaseLogo.webp'
 import { useState,useContext  } from "react"
 import { ReactText,TypescriptText,NextText,TailwindText,CssText,HtmlText,GitText,GithubText,FirebaseText,BoostrapText,JavascriptText } from './Content'
 import { MyContext } from '@/context/MyContext'
@@ -27,7 +27,7 @@ function CatchTechGiveStyle (tech:string ){
     return (tech === TechClicked ? 'bg-gray-800 border-b-0 ' : 'bg-gray-900  border-gray-500 border-b-gray-500' ) 
     }
     else {
-    return (tech === TechClicked ? 'bg-white border-b-0 ' : 'bg-gray-200  border-b-gray-300' ) 
+    return (tech === TechClicked ? 'bg-white border-b-0 border-x-gray-300 border-t-gray-500' : 'bg-gray-200  border-b-gray-300' ) 
     }
     }
 

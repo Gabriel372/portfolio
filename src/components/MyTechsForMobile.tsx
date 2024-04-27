@@ -9,7 +9,8 @@ import JavascriptImg from '../images/js3d.webp'
 import CssImg from '../images/css3d.png'
 import Htmlimg from '../images/html3d.png'
 import GitImg from '../images/git3d.webp'
-import FirebaseImg from '../images/firebaseLogo.png'
+import FirebaseImg from '../images/firebaseLogo.webp'
+// import Firebase from '../images/firebaseLogo.webp'
 import { ReactText,TypescriptText,NextText,TailwindText,CssText,HtmlText,GitText,GithubText,FirebaseText,BoostrapText,JavascriptText } from './Content'
 import { MyContext } from "@/context/MyContext"
 import { TstateTheme } from "@/types/Types"
@@ -21,7 +22,7 @@ const StyleForImg = 'max-w-14 w-screen500:max-w-10'
 const [TechClicked,setTechClicked] = useState<string>('react')
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
 const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700'
-:'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-x-gray-300 border-t-gray-300 border-b-gray-300' ;
+:'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-gray-300' ;
 
 function ReturnText() {
     return (TechClicked === 'react' && ReactText) ||
@@ -40,7 +41,7 @@ function CatchTechGiveStyle (tech:string ){
     return (tech === TechClicked ? 'bg-gray-700' : 'bg-gray-900  border-gray-500' ) 
     }
     else {
-    return (tech === TechClicked ? 'bg-white border-b-0 ' : 'bg-gray-200  border-b-gray-300' ) 
+    return (tech === TechClicked ? 'bg-white border-gray-400' : 'bg-gray-200  border-b-gray-300' ) 
     }
     }
 
@@ -52,7 +53,7 @@ return (
         
 <ul className=' flex  w-full justify-center flex-wrap gap-2 mb-2'>
         
-<li className={`${StyleForLi} ${CatchTechGiveStyle('react')}`} 
+<li className={`${StyleForLi} ${CatchTechGiveStyle('react')} `} 
 onClick={()=> setTechClicked('react') }><b className=''
  >React js</b>
 <Image src={ReactImg} alt='image'   className={`${StyleForImg}`}/>

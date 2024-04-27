@@ -4,11 +4,11 @@ import { TstateTheme } from "@/types/Types";
 
 function Footer() {
     const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
-    const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500':'duration-500 bg-gradient-to-t from-gray-600 to-white'
+    const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500 border-t-gray-700 ':'duration-500 bg-gradient-to-t from-gray-600 to-white'
     
-return (<footer className={`${ThemeForComponent} `}>
+return (<footer className={`${ThemeForComponent} border border-b-0 border-x-0`}>
 <nav className=" flex justify-around w-full h-16 items-center">
-Gabriel Brandão 2024
+Developed by Gabriel Brandão
     </nav>
 
 

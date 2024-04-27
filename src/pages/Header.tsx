@@ -7,9 +7,9 @@ import { TstateTheme } from "@/types/Types";
 
 function Header() {
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
-const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-1000 duration-700 border-b-gray-600 border border-t-0':'duration-800 bg-gradient-to-b from-gray-600 to-white'
+const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-700 border-b-gray-600 border border-t-0 border-x-0':'duration-800 bg-gradient-to-b from-gray-600 to-white'
 
-return (<header className={`${ThemeForComponent} dura`}>
+return (<header className={`${ThemeForComponent} `}>
 <nav className=" flex justify-around w-full h-16 items-center ">
     <BtnToggleMode/>
     </nav>
