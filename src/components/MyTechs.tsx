@@ -19,15 +19,15 @@ function MyTechs() {
 const [TechClicked,setTechClicked] = useState<string>('react') ;
 
 const StyleForLi = 'cursor-pointer flex flex-col rounded-t-xl px-2 pb-1  shadow-2xl border ml-3 '
-const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500 bg-gray-500 border-x-gray-500  border-b-gray-700'
+const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-x-gray-500  border-b-gray-700'
 :'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-x-gray-300 border-t-gray-300 border-b-gray-300'
 
 function CatchTechGiveStyle (tech:string ){
     if (ThemeIsDark) {
-    return (tech === TechClicked ? 'bg-gray-800 border-b-0 ' : 'bg-gray-900  border-gray-500 border-b-gray-500' ) 
+    return (tech === TechClicked ? 'bg-gray-800 border-b-0 ' : 'bg-gray-900  border-gray-500 border-b-gray-500 hover:bg-gray-700' ) 
     }
     else {
-    return (tech === TechClicked ? 'bg-white border-b-0 border-x-gray-300 border-t-gray-500' : 'bg-gray-200  border-b-gray-300' ) 
+    return (tech === TechClicked ? 'bg-white border-b-0 border-x-gray-300 border-t-gray-500' : 'bg-gray-200  border-b-gray-300 hover:bg-white' ) 
     }
     }
 
@@ -58,7 +58,7 @@ onClick={()=>setTechClicked('react')}><b className=''
 >React js</b>
 <Image src={ReactImg} alt='image' height={70}  className=" "/></li>
 
-<li className={`${StyleForLi} ${CatchTechGiveStyle('typescript')} `} 
+<li className={`${StyleForLi} ${CatchTechGiveStyle('typescript')}`} 
 onClick={()=>setTechClicked('typescript')}><b>Typescript</b>
 <Image src={TypescriptImg} alt='image' height={70}  className=" "/></li>
 

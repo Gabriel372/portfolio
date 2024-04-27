@@ -10,10 +10,14 @@ return (<>
 { Modal.IsOpen && <div onClick={()=>setModal({IsOpen:false,img:''})}
    className={`${style.containerMod} `} >
 
+<div className={`${style.divScroll}`}>
+
 <div className={`${style.dadSquare}`}>
 <p className={`${style.btnCloseMod}`}> <IoClose/></p>
 <Image onClick={(e)=> e.stopPropagation()} src={Modal.img} alt="imagem"
 className={`${style.squareMod }`}/>
+
+</div>
 
 </div>
 

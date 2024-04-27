@@ -10,7 +10,6 @@ import CssImg from '../images/css3d.png'
 import Htmlimg from '../images/html3d.png'
 import GitImg from '../images/git3d.webp'
 import FirebaseImg from '../images/firebaseLogo.webp'
-// import Firebase from '../images/firebaseLogo.webp'
 import { ReactText,TypescriptText,NextText,TailwindText,CssText,HtmlText,GitText,GithubText,FirebaseText,BoostrapText,JavascriptText } from './Content'
 import { MyContext } from "@/context/MyContext"
 import { TstateTheme } from "@/types/Types"
@@ -38,10 +37,10 @@ function ReturnText() {
 }
 function CatchTechGiveStyle (tech:string ){
     if (ThemeIsDark) {
-    return (tech === TechClicked ? 'bg-gray-700' : 'bg-gray-900  border-gray-500' ) 
+    return (tech === TechClicked ? 'bg-gray-700' : 'bg-gray-900  border-gray-500 hover:bg-gray-700' ) 
     }
     else {
-    return (tech === TechClicked ? 'bg-white border-gray-400' : 'bg-gray-200  border-b-gray-300' ) 
+    return (tech === TechClicked ? 'bg-white border-gray-400' : 'bg-gray-200  border-b-gray-300 hover:bg-white' ) 
     }
     }
 

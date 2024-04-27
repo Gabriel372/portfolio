@@ -37,8 +37,12 @@ setThemeIsDark(!ThemeIsDark) ;
 
 
 
-return (<button onClick={ToggleTheme}>
- {ThemeIsDark ? <IoIosSunny className=" text-2xl"/> : <FaMoon />} 
+return (<button onClick={ToggleTheme} >
+
+ {ThemeIsDark ?
+<IoIosSunny className=" text-[2.2rem]"/> : <FaMoon className=" text-[1.5rem]"/>
+}
+ 
 
 </button>)
 
