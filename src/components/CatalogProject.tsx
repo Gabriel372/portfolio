@@ -15,7 +15,7 @@ import { MyContext } from '@/context/MyContext';
 function CatalogProject({Modal,setModal}:TstateModalProject) {
 const StyleForTechs = ' pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
-const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700'
+const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700 '
 :'duration-500 bg-white  from-gray-600 to-white bg-slate-100 border-gray-100 ' ;   
 const TheForTech = ThemeIsDark ? 'bg-slate-900':
 'bg-gray-200' ;

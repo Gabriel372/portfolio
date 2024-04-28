@@ -20,7 +20,7 @@ return ()=> clearInterval(Interval)
 return (<section className=" flex w-full justify-evenly mb-7 mt-5 w-screen800:mb-0">
 
 <div className="rounded-tl-3xl rounded-br-3xl animate-float w-screen900:hidden mr-2"> 
-<div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[350px] shadow-2xl ">
+<div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[23rem] shadow-2xl ">
     <Image src={imgProfile} alt='image' height={500} className=" "/>
 </div>
 </div>
@@ -39,13 +39,19 @@ return (<section className=" flex w-full justify-evenly mb-7 mt-5 w-screen800:mb
 
 
 <div className="  rounded-tl-3xl rounded-br-3xl animate-float hidden w-screen900:flex justify-center"> 
-<div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[310px] shadow-2xl">
-    <Image src={imgProfile} alt='image'  height={500} className=" "/>
+<div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[20rem] shadow-2xl">
+    <Image src={imgProfile} alt='image' height={500}   className=""/>
 </div>
 </div>
 
-<p className=" text-xl text-center mt-6">Oi meu nome é <b>Gabriel Brandão</b> sou programador Front end React js
-Gosto de tecnologia e ver o resultado do meu trabalho gerar uma boa experiência a cada usuário e facilitando sua vida.</p>
+<p className=" text-xl text-center mt-6">
+Apaixonado por tecnologia e impulsionado pelo desejo de criar experiências digitais excelentes, sou <b>Gabriel Brandão</b> , programador front-end com foco em React.js.
+Minha missão é transformar ideias em interfaces eficientes e agradáveis que facilitem a vida das pessoas e gerem um impacto positivo no mundo digital.
+Com entusiasmo e dedicação, busco aprimorar minhas habilidades continuamente, explorando as últimas tendências e tecnologias para oferecer soluções inovadoras e personalizadas.
+Acredito no poder da tecnologia para resolver problemas e aproximar pessoas.
+{/* sou programador Front end React js
+Gosto de tecnologia e ver o resultado do meu trabalho gerar uma boa experiência a cada usuário e facilitando sua vida. */}
+</p>
 
 <div className=' mt-3 '>
 

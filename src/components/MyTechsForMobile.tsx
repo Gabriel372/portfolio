@@ -16,11 +16,11 @@ import { TstateTheme } from "@/types/Types"
 
 function MyTechsForMobile() {
 const StyleForLi = `cursor-pointer flex flex-col rounded-xl px-2 pb-1  shadow-2xl border   
-w-screen550:text-sm  w-screen450:text-[11px] w-screen550:px-1 w-screen550:rounded-md justify-center items-center` 
+w-screen550:text-sm  w-screen450:text-[0.7rem] w-screen550:px-1 w-screen550:rounded-md justify-center items-center` 
 const StyleForImg = 'max-w-14 w-screen500:max-w-10'
 const [TechClicked,setTechClicked] = useState<string>('react')
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
-const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700'
+const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700 shadow-xl shadow-gray-800'
 :'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-gray-300' ;
 
 function ReturnText() {
@@ -37,7 +37,7 @@ function ReturnText() {
 }
 function CatchTechGiveStyle (tech:string ){
     if (ThemeIsDark) {
-    return (tech === TechClicked ? 'bg-gray-700' : 'bg-gray-900  border-gray-500 hover:bg-gray-700' ) 
+    return (tech === TechClicked ? 'bg-gray-700 ' : 'bg-gray-900  border-gray-500 hover:bg-gray-700 ' ) 
     }
     else {
     return (tech === TechClicked ? 'bg-white border-gray-400' : 'bg-gray-200  border-b-gray-300 hover:bg-white' ) 
@@ -96,15 +96,11 @@ onClick={()=> setTechClicked('firebase') }><b>Firebase</b>
 
 </ul>
 
-<p className={`${ThemeForComponent}   border rounded-xl text-lg p-1 w-full pt-2 min-h-[240px] mb-3 shadow-2xl mt-2'`}>
+<p className={`${ThemeForComponent} border rounded-xl text-lg  w-full px-1 py-2  mb-3 shadow-2xl mt-2 w-screen500:min-h-[23rem] w-screen800:min-h-[12.5rem]  min-h-[9rem]`}>
  {`${ReturnText()}`}   
  {TechClicked === 'git' && <p>{GithubText}</p> } 
 
 </p>
-
-<ul className=' flex  flex-row max-w-[500px] w-full justify-end'>
-
-</ul>
       
 </div>
         

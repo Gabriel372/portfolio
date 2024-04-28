@@ -3,7 +3,6 @@ import style from './ModalProject.module.css'
 import Image from "next/image"
 import { IoClose } from "react-icons/io5";
 
-
 function ModalProject({Modal,setModal}:TstateModalProject) {
 
 return (<>

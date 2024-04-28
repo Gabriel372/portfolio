@@ -19,7 +19,7 @@ function MyTechs() {
 const [TechClicked,setTechClicked] = useState<string>('react') ;
 
 const StyleForLi = 'cursor-pointer flex flex-col rounded-t-xl px-2 pb-1  shadow-2xl border ml-3 '
-const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-x-gray-500  border-b-gray-700'
+const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-x-gray-500  border-b-gray-700 shadow-xl shadow-gray-800'
 :'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-x-gray-300 border-t-gray-300 border-b-gray-300'
 
 function CatchTechGiveStyle (tech:string ){
@@ -53,7 +53,7 @@ return (
 
 <ul className=' flex  flex-row '>
 
-<li className={`${StyleForLi} ${CatchTechGiveStyle('react')}`} 
+<li className={`${StyleForLi} ${CatchTechGiveStyle('react')} `} 
 onClick={()=>setTechClicked('react')}><b className=''
 >React js</b>
 <Image src={ReactImg} alt='image' height={70}  className=" "/></li>
