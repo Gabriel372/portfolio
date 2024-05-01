@@ -28,15 +28,28 @@ function RegistMemberProject({Modal,setModal}:TstateModalProject) {
     </div>
     
     <div className=' mb-4 flex w-full justify-center max-h-96'>
-    
-    <div className=' flex max-w-[350px] w-screen400:max-w-[250px]'>
+        
+    <div className=' flex max-w-[21rem] w-screen300:mx-1 w-screen400:max-w-[17rem] '>
+<Image src={RegistDesktopImg} alt='image' onClick={()=> {setModal({IsOpen:true,img:RegistDesktopImg} ) } }
+className={` border-black rounded-xl  inline max-h-40 cursor-pointer w-screen400:border-[0.4rem] border-[0.5rem] `}/>
+
+<Image src={RegistMobileImg} alt='image'  onClick={()=> setModal({IsOpen:true,img:RegistMobileImg})}
+className={` border-black rounded-xl border-4 inline z-10 relative right-10 top-8 max-h-[8.6rem] cursor-pointer 
+w-screen400:max-h-[5.7rem] w-screen400:rounded-md w-screen400:border-[3px] w-screen400:top-[3.7rem]`} />
+
+</div>
+
+
+
+    {/* <div className=' flex max-w-[21rem] w-screen300:mx-1 w-screen400:max-w-[17rem] '>
     <Image src={RegistDesktopImg} alt='image' height={150} onClick={()=> {setModal({IsOpen:true,img:RegistDesktopImg} ) } }
-    className=" border-black rounded-xl border-8 inline max-h-40 cursor-pointer"/>
+    className=" border-black rounded-xl  inline max-h-40 cursor-pointer w-screen400:border-[0.4rem] border-[0.5rem]"/>
     
     <Image src={RegistMobileImg} alt='image' height={160} onClick={()=> setModal({IsOpen:true,img:RegistMobileImg})}
-    className="border-black rounded-xl border-4 inline z-10 relative right-10 top-5 max-h-[150px] cursor-pointer"/>
+className={` border-black rounded-xl border-4 inline z-10 relative right-10 top-8 max-h-[8.6rem] cursor-pointer 
+w-screen400:max-h-[5.6rem] w-screen400:rounded-md w-screen400:border-[3px] w-screen400:top-14 w-screen300:top-11`}/>
     
-    </div>
+    </div> */}
     
     </div>
     
@@ -54,10 +67,10 @@ function RegistMemberProject({Modal,setModal}:TstateModalProject) {
     <span className={`${StyleForTechs} ${TheForTech}`}><SiFirebase className=' mr-[2px]'/> Firebase</span>
     </div>
     
-    <div className=' mt-4 flex flex-row justify-around'>
+    <div className=' flex justify-around mt-4 flex-wrap gap-1 w-screen350:gap-2'>
     
     <Link href='https://gabriel372.github.io/cadastro-de-membros/'
-    className=' bg-black text-white rounded-lg px-2 flex flex-row items-center max-w-36 py-2 justify-center w-full hover:bg-gray-700 border border-gray-700'>
+    className=' bg-black text-white rounded-lg px-2 flex flex-row items-center max-w-36 py-2 justify-center w-full hover:bg-gray-700 border border-gray-700 w-screen350:max-w-[10rem]'>
     <TbWorldWww className=' mr-[2px] text-xl'/>Ver site</Link>
     
     <Link href='https://github.com/Gabriel372/cadastro-de-membros'

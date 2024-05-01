@@ -6,6 +6,9 @@ import { FaLinkedin,FaGithub } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MyContext } from "@/context/MyContext";
 import { TstateTheme } from "@/types/Types";
+import { motion } from 'framer-motion';
+import { pageVariants,pageTransition } from "../components/AnimationMotion";
+
 
 function AboutMe() {
 const [CursorIsVisible,setCursorIsVisible] = useState(false)
@@ -17,7 +20,8 @@ return ()=> clearInterval(Interval)
 },[])
 
 
-return (<section className=" flex w-full justify-evenly mb-7 mt-5 w-screen800:mb-0">
+return (<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
+<section className=" flex w-full justify-evenly mb-7 mt-5 w-screen800:mb-0">
 
 <div className="rounded-tl-3xl rounded-br-3xl animate-float w-screen900:hidden mr-2"> 
 <div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[23rem] shadow-2xl ">
@@ -78,7 +82,12 @@ WhatsApp</Link>
 
 
 </div>
-</section>)    
+
+</section>
+</motion.div>
+
+
+)    
 }
 
 export default AboutMe

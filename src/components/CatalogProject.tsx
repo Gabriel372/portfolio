@@ -11,6 +11,7 @@ import { FaGithub } from "react-icons/fa";
 import { TstateModalProject,TstateTheme } from '@/types/Types';
 import { useContext } from 'react';
 import { MyContext } from '@/context/MyContext';
+import { motion } from 'framer-motion';
 
 function CatalogProject({Modal,setModal}:TstateModalProject) {
 const StyleForTechs = ' pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
@@ -28,12 +29,13 @@ return (<li className={`${ThemeForComponent} max-w-[400px]  rounded-2xl  border 
 
 <div className=' mb-4 flex w-full justify-center max-h-96'>
 
-<div className=' flex max-w-[350px] w-screen400:max-w-[250px]'>
+<div className=' flex max-w-[21rem] w-screen300:mx-1 w-screen400:max-w-[17rem] '>
 <Image src={CatalogDesktopImg} alt='image' onClick={()=> {setModal({IsOpen:true,img:CatalogDesktopImg} ) } }
-className=" border-black rounded-xl border-8 inline max-h-40 cursor-pointer"/>
+className={` border-black rounded-xl  inline max-h-40 cursor-pointer w-screen400:border-[0.4rem] border-[0.5rem] `}/>
 
-<Image src={CatalogMobileImg} alt='image' height={160} onClick={()=> setModal({IsOpen:true,img:CatalogMobileImg})}
-className="border-black rounded-xl border-4 inline z-10 relative right-10 top-5 max-h-[150px] cursor-pointer"/>
+<Image src={CatalogMobileImg} alt='image'  onClick={()=> setModal({IsOpen:true,img:CatalogMobileImg})}
+className={` border-black rounded-xl border-4 inline z-10 relative right-10 top-8 max-h-[8.6rem] cursor-pointer 
+w-screen400:max-h-[5.7rem] w-screen400:rounded-md w-screen400:border-[3px] w-screen400:top-[3.7rem]`}/>
 
 </div>
 
@@ -54,10 +56,11 @@ que são exibidos na página inicial. Eles também podem adicionar um título pa
 <span className={`${StyleForTechs} ${TheForTech}`}><SiFirebase className=' mr-[2px]'/> Firebase</span>
 </div>
 
-<div className=' flex flex-row justify-around mt-4'>
+<div className=' flex justify-around mt-4 flex-wrap gap-1 w-screen350:gap-2'>
 
 <Link href='https://gabriel372.github.io/catalogo-de-produtos/'
-className=' bg-black text-white rounded-lg px-2 flex flex-row items-center max-w-36 py-2 justify-center w-full hover:bg-gray-700 border border-gray-700'>
+className={`bg-black text-white rounded-lg px-2 flex flex-row items-center max-w-36 py-2 justify-center w-full
+ hover:bg-gray-700 border border-gray-700 w-screen350:max-w-[10rem]`}>
 <TbWorldWww className=' mr-[2px] text-xl'/>Ver site</Link>
 
 <Link href='https://github.com/Gabriel372/catalogo-de-produtos'
