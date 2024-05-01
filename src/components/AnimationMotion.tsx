@@ -41,6 +41,40 @@ export const pageVariants = {
     ease: "anticipate",
     duration: 0.7
   };
+ export const modal = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.25,
+        duration: 0.5, 
+        delay: 0
+      }
+    },
+    exit: {
+      opacity: 0,
+      scale: 0,
+      transition: {
+        ease: 'easeInOut'
+      }
+    }
+  }
+ export const CardProject = {
+    offscreen: {
+      y: 90
+    },
+    onscreen: {
+      y: 0,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.05
+      }
+    }
+  };
 
 
 

@@ -12,6 +12,8 @@ import { TstateModalProject,TstateTheme } from '@/types/Types';
 import { useContext } from 'react';
 import { MyContext } from '@/context/MyContext';
 import { motion } from 'framer-motion';
+import { CardProject } from './AnimationMotion';
+
 
 function CatalogProject({Modal,setModal}:TstateModalProject) {
 const StyleForTechs = ' pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
@@ -21,7 +23,9 @@ const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  bo
 const TheForTech = ThemeIsDark ? 'bg-slate-900':
 'bg-gray-200' ;
 
-return (<li className={`${ThemeForComponent} max-w-[400px]  rounded-2xl  border px-1 py-3 shadow-2xl transform transition-transform duration-200 hover:-translate-y-1`}>
+
+return (<motion.li variants={CardProject}
+className={`${ThemeForComponent} max-w-[400px]  rounded-2xl  border px-1 py-3 shadow-2xl transform transition-transform duration-200 hover:-translate-y-1`}>
 
 <div>
 
@@ -34,8 +38,8 @@ return (<li className={`${ThemeForComponent} max-w-[400px]  rounded-2xl  border 
 className={` border-black rounded-xl  inline max-h-40 cursor-pointer w-screen400:border-[0.4rem] border-[0.5rem] `}/>
 
 <Image src={CatalogMobileImg} alt='image'  onClick={()=> setModal({IsOpen:true,img:CatalogMobileImg})}
-className={` border-black rounded-xl border-4 inline z-10 relative right-10 top-8 max-h-[8.6rem] cursor-pointer 
-w-screen400:max-h-[5.7rem] w-screen400:rounded-md w-screen400:border-[3px] w-screen400:top-[3.7rem]`}/>
+className={` border-black rounded-xl border-4 inline  relative right-10 top-8 max-h-[8.6rem] cursor-pointer 
+w-screen400:max-h-[5.7rem] w-screen400:rounded-md w-screen400:border-[3px] w-screen400:top-[3.7rem] `}/>
 
 </div>
 
@@ -69,7 +73,7 @@ className=' bg-black text-white rounded-lg px-2 flex flex-row items-center py-2 
 
 </div>
 
-</li>
+</motion.li>
 ) 
 
 }
