@@ -9,27 +9,32 @@ import Link from 'next/link';
 import { TbWorldWww } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
 import { TstateModalProject,TstateTheme } from '@/types/Types';
-import { useContext } from 'react';
+import { useContext,useRef } from 'react';
 import { MyContext } from '@/context/MyContext';
 import { motion } from 'framer-motion';
-import { CardProject } from './AnimationMotion';
+import { ScrollVariants,ScrollTransition } from './AnimationMotion';
+import { useInView } from 'react-intersection-observer';
 
-
-function CatalogProject({Modal,setModal}:TstateModalProject) {
+function CatalogProject({setModal}:TstateModalProject) {
 const StyleForTechs = ' pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
 const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700 '
 :'duration-500 bg-white  from-gray-600 to-white bg-slate-100 border-gray-100 ' ;   
 const TheForTech = ThemeIsDark ? 'bg-slate-900':
 'bg-gray-200' ;
+const [ref, inView] = useInView();
+const containerRef = useRef(null);
 
+return (<li ref={containerRef}>
 
-return (<motion.li variants={CardProject}
+<div ref={ref}>
+
+<motion.div  
+  initial="hidden"
+  animate={inView ? "visible" : "hidden"}
+  variants={ScrollVariants}
+  transition={ScrollTransition}
 className={`${ThemeForComponent} max-w-[400px]  rounded-2xl  border px-1 py-3 shadow-2xl transform transition-transform duration-200 hover:-translate-y-1`}>
-
-<div>
-
-</div>
 
 <div className=' mb-4 flex w-full justify-center max-h-96'>
 
@@ -73,7 +78,11 @@ className=' bg-black text-white rounded-lg px-2 flex flex-row items-center py-2 
 
 </div>
 
-</motion.li>
+</motion.div>
+
+</div>
+
+</li>
 ) 
 
 }

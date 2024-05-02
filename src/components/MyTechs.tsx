@@ -9,10 +9,13 @@ import CssImg from '../images/css3d.png'
 import Htmlimg from '../images/html3d.png'
 import GitImg from '../images/git3d.webp'
 import FirebaseImg from '../images/firebaseLogo.webp'
-import { useState,useContext  } from "react"
+import { useState,useContext,useRef  } from "react"
 import { ReactText,TypescriptText,NextText,TailwindText,CssText,HtmlText,GitText,GithubText,FirebaseText,BoostrapText,JavascriptText } from './Content'
 import { MyContext } from '@/context/MyContext'
 import { TstateTheme } from '@/types/Types'
+import { motion } from 'framer-motion';
+import { ScrollVariants,ScrollTransition } from './AnimationMotion';
+import { useInView } from 'react-intersection-observer';
 
 function MyTechs() {
     const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
@@ -21,6 +24,8 @@ const [TechClicked,setTechClicked] = useState<string>('react') ;
 const StyleForLi = 'cursor-pointer flex flex-col rounded-t-xl px-2 pb-1  shadow-2xl border ml-3 '
 const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-x-gray-500  border-b-gray-700 shadow-xl shadow-gray-800'
 :'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-x-gray-300 border-t-gray-300 border-b-gray-300'
+const [ref, inView] = useInView();
+const containerRef = useRef(null);
 
 function CatchTechGiveStyle (tech:string ){
     if (ThemeIsDark) {
@@ -29,8 +34,7 @@ function CatchTechGiveStyle (tech:string ){
     else {
     return (tech === TechClicked ? 'bg-white border-b-0 border-x-gray-300 border-t-gray-500' : 'bg-gray-200  border-b-gray-300 hover:bg-white' ) 
     }
-    }
-
+}
 
 function ReturnText() {
 return (TechClicked === 'react' && ReactText) ||
@@ -48,8 +52,13 @@ return (TechClicked === 'react' && ReactText) ||
 return (
 <section className=' mt-4 mb-10 w-screen1050:hidden'>
 <h3 className=' text-3xl text-center mb-6'>Tecnologias que utilizo</h3>
+<div ref={containerRef}>
 
-<div className=' flex flex-col w-full items-center'>
+<motion.div   initial="hidden" ref={ref}
+  animate={inView ? "visible" : "hidden"}
+  variants={ScrollVariants}
+  transition={ScrollTransition}
+className=' flex flex-col w-full items-center'>
 
 <ul className=' flex  flex-row '>
 
@@ -100,10 +109,11 @@ onClick={()=>setTechClicked('firebase')}><b>Firebase</b>
  {TechClicked === 'git' && <p>{GithubText}</p> } 
 </p>
 
+</motion.div>
+
 </div>
 
 </section>
-
 )    
 }
 

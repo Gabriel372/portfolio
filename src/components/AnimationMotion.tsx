@@ -61,26 +61,13 @@ export const pageVariants = {
       }
     }
   }
- export const CardProject = {
-    offscreen: {
-      y: 90
-    },
-    onscreen: {
-      y: 0,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.05
-      }
-    }
+
+export  const ScrollVariants = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 100 },
   };
 
-
-
-
-  // export const modalVariants = {
-  //   hidden: { opacity: 0, y: "-100vh" },
-  //   visible: { opacity: 1, y: "0" },
-  //   exit: { opacity: 0, y: "100vh" }
-  // };  
+  export const ScrollTransition  = {
+    duration: 0.5,
+    damping: 1,
+  };

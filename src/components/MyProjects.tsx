@@ -3,16 +3,14 @@ import RegistMemberProject from './RegistMemberProject';
 import ModalProject from '@/modals/ModalProject';
 import { TmodalProject } from '@/types/Types';
 import { useState } from 'react';
-import { motion } from "framer-motion";
-
 
 function MyProjects() {
 const [Modal,setModal] = useState<TmodalProject>({IsOpen:false,img:''})
 
-return ( <motion.section initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.5 }}
-className=' flex flex-col justify-around mb-8'>
+return ( <section className=' flex flex-col justify-around mb-8' >
  
     <h4 className=' text-3xl text-center mb-6'>Meus projetos</h4>
+
 <ul className='flex flex-wrap  w-screen850:justify-center justify-around gap-6'>
 
 <CatalogProject Modal={Modal} setModal={setModal} />
@@ -22,7 +20,7 @@ className=' flex flex-col justify-around mb-8'>
 
 <ModalProject Modal={Modal} setModal={setModal}/>
 
-</motion.section> 
+</section> 
 
 )
 

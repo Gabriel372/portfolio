@@ -10,27 +10,30 @@ import { TbWorldWww } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { TstateModalProject,TstateTheme } from '@/types/Types';
-import { useContext } from 'react';
+import { useContext,useRef } from 'react';
 import { MyContext } from '@/context/MyContext';
 import { motion } from 'framer-motion';
-import { CardProject } from './AnimationMotion';
+import { useInView } from 'react-intersection-observer';
+import { ScrollVariants,ScrollTransition } from './AnimationMotion';
 
-
-function RegistMemberProject({Modal,setModal}:TstateModalProject) {
+function RegistMemberProject({setModal}:TstateModalProject) {
     const StyleForTechs = ' pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
     const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
     const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700'
     :'duration-500 bg-white  from-gray-600 to-white bg-slate-100 border-gray-100 ' ; 
     const TheForTech = ThemeIsDark ? 'bg-slate-900':
     'bg-gray-200' ;  
+    const [ref, inView] = useInView();
+    const containerRef = useRef(null);
 
-    return (<motion.li variants={CardProject} 
+    return (<li ref={containerRef}>
+    <div  ref={ref}>
+<motion.div   initial="hidden"
+  animate={inView ? "visible" : "hidden"}
+  variants={ScrollVariants}
+  transition={ScrollTransition}
     className={`${ThemeForComponent} max-w-[400px]  rounded-2xl  border px-1 py-3 shadow-2xl transform transition-transform duration-200 hover:-translate-y-1`}>
 
-    <div>
-    
-    </div>
-    
     <div className=' mb-4 flex w-full justify-center max-h-96'>
         
     <div className=' flex max-w-[21rem] w-screen300:mx-1 w-screen400:max-w-[17rem] '>
@@ -43,18 +46,6 @@ w-screen400:max-h-[5.7rem] w-screen400:rounded-md w-screen400:border-[3px] w-scr
 
 </div>
 
-
-
-    {/* <div className=' flex max-w-[21rem] w-screen300:mx-1 w-screen400:max-w-[17rem] '>
-    <Image src={RegistDesktopImg} alt='image' height={150} onClick={()=> {setModal({IsOpen:true,img:RegistDesktopImg} ) } }
-    className=" border-black rounded-xl  inline max-h-40 cursor-pointer w-screen400:border-[0.4rem] border-[0.5rem]"/>
-    
-    <Image src={RegistMobileImg} alt='image' height={160} onClick={()=> setModal({IsOpen:true,img:RegistMobileImg})}
-className={` border-black rounded-xl border-4 inline z-10 relative right-10 top-8 max-h-[8.6rem] cursor-pointer 
-w-screen400:max-h-[5.6rem] w-screen400:rounded-md w-screen400:border-[3px] w-screen400:top-14 w-screen300:top-11`}/>
-    
-    </div> */}
-    
     </div>
     
     <div>
@@ -82,12 +73,13 @@ w-screen400:max-h-[5.6rem] w-screen400:rounded-md w-screen400:border-[3px] w-scr
     <FaGithub className=' mr-[2px] text-xl'/>Ver repositório</Link>
     
     </div>
+
+</motion.div>
+    </div>
     
-</motion.li>
+</li>
 ) 
 
 }
 
 export default RegistMemberProject
-
-

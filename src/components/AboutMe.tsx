@@ -1,24 +1,19 @@
 import Image from "next/image"
 import imgProfile from '../images/imgProfile.jpeg'
-import { useState ,useEffect,useContext } from "react"
+import { useState ,useEffect } from "react"
 import Link from "next/link"
 import { FaLinkedin,FaGithub } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { MyContext } from "@/context/MyContext";
-import { TstateTheme } from "@/types/Types";
 import { motion } from 'framer-motion';
 import { pageVariants,pageTransition } from "../components/AnimationMotion";
 
-
 function AboutMe() {
 const [CursorIsVisible,setCursorIsVisible] = useState(false)
-const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
 
 useEffect(()=>{
 const Interval =  setInterval(()=>setCursorIsVisible((prev)=>!prev),700);  
 return ()=> clearInterval(Interval)
 },[])
-
 
 return (<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
 <section className=" flex w-full justify-evenly mb-7 mt-5 w-screen800:mb-0">
@@ -28,7 +23,6 @@ return (<motion.div initial="initial" animate="in" exit="out" variants={pageVari
     <Image src={imgProfile} alt='image' height={500} className=" "/>
 </div>
 </div>
-
 
 <div className=' flex justify-center flex-col max-w-[660px] w-full mx-1'>
 
@@ -41,7 +35,6 @@ return (<motion.div initial="initial" animate="in" exit="out" variants={pageVari
 
 </div>
 
-
 <div className="  rounded-tl-3xl rounded-br-3xl animate-float hidden w-screen900:flex justify-center"> 
 <div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[20rem] shadow-2xl">
     <Image src={imgProfile} alt='image' height={500}   className=""/>
@@ -53,13 +46,11 @@ Apaixonado por tecnologia e impulsionado pelo desejo de criar experiências digi
 Minha missão é transformar ideias em interfaces eficientes e agradáveis que facilitem a vida das pessoas e gerem um impacto positivo no mundo digital.
 Com entusiasmo e dedicação, busco aprimorar minhas habilidades continuamente, explorando as últimas tendências e tecnologias para oferecer soluções inovadoras e personalizadas.
 Acredito no poder da tecnologia para resolver problemas e aproximar pessoas.
-{/* sou programador Front end React js
-Gosto de tecnologia e ver o resultado do meu trabalho gerar uma boa experiência a cada usuário e facilitando sua vida. */}
 </p>
 
 <div className=' mt-3 '>
 
-<b className="">Link para meus contatos:</b>
+<b className=" text-xl">Links para contato:</b>
 
 <div className="flex mt-2 flex-wrap gap-1 justify-center w-screen500:justify-start"> 
 
@@ -80,13 +71,10 @@ WhatsApp</Link>
 
 </div>
 
-
 </div>
 
 </section>
 </motion.div>
-
-
 )    
 }
 

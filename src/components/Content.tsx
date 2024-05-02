@@ -19,10 +19,3 @@ export  const FirebaseText = 'O Firebase Database, também conhecido como Realti
 export  const BoostrapText = 'O Bootstrap é um framework de front-end desenvolvido pelo Twitter que ajuda os desenvolvedores a criar interfaces web responsivas e consistentes de forma mais rápida e fácil. Ele fornece um conjunto de componentes predefinidos, como botões, formulários, barras de navegação, entre outros, bem como um sistema de grid responsivo que facilita o desenvolvimento de layouts flexíveis e adaptáveis a diferentes tamanhos de tela.';
 
 export  const JavascriptText = 'JavaScript é uma linguagem de programação amplamente utilizada no desenvolvimento web para tornar as páginas da web interativas e dinâmicas. Ela permite aos desenvolvedores criar funcionalidades como validação de formulários, animações, manipulação do conteúdo da página em tempo real e interações com o usuário, como pop-ups e menus de navegação.'; 
-
-
-
-
-
-
-

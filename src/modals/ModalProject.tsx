@@ -3,10 +3,9 @@ import style from './ModalProject.module.css'
 import Image from "next/image"
 import { IoClose } from "react-icons/io5";
 import { motion } from 'framer-motion';
-import { pageVariantsModal,pageTransitionModal,modal } from "@/components/AnimationMotion";
+import { modal } from "@/components/AnimationMotion";
 
 function ModalProject({Modal,setModal}:TstateModalProject) {
-
 
 return (<>
 { Modal.IsOpen && <motion.div onClick={()=>setModal({IsOpen:false,img:''})}

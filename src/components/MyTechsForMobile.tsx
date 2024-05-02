@@ -1,4 +1,4 @@
-import { useState,useContext  } from "react"
+import { useState,useContext,useRef  } from "react"
 import Image from 'next/image'
 import ReactImg from '../images/react3d.webp'
 import TypescriptImg from '../images/ts3d.webp'
@@ -13,6 +13,9 @@ import FirebaseImg from '../images/firebaseLogo.webp'
 import { ReactText,TypescriptText,NextText,TailwindText,CssText,HtmlText,GitText,GithubText,FirebaseText,BoostrapText,JavascriptText } from './Content'
 import { MyContext } from "@/context/MyContext"
 import { TstateTheme } from "@/types/Types"
+import { motion } from 'framer-motion';
+import { ScrollVariants,ScrollTransition } from './AnimationMotion';
+import { useInView } from 'react-intersection-observer';
 
 function MyTechsForMobile() {
 const StyleForLi = `cursor-pointer flex flex-col rounded-xl px-2 pb-1  shadow-2xl border   
@@ -22,6 +25,8 @@ const [TechClicked,setTechClicked] = useState<string>('react')
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
 const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700 shadow-xl shadow-gray-800'
 :'duration-500 bg-white  from-gray-600 to-white bg-gray-200 border-gray-300' ;
+const [ref, inView] = useInView();
+const containerRef = useRef(null);
 
 function ReturnText() {
     return (TechClicked === 'react' && ReactText) ||
@@ -42,13 +47,19 @@ function CatchTechGiveStyle (tech:string ){
     else {
     return (tech === TechClicked ? 'bg-white border-gray-400' : 'bg-gray-200  border-b-gray-300 hover:bg-white' ) 
     }
-    }
+}
 
 return (
 <section className=' mt-4 hidden w-screen1050:flex flex-col mb-2'>
  <h3 className=' text-3xl text-center mb-6'>Tecnologias que utilizo</h3>
-        
-<div className=' flex flex-col w-full items-center'>
+
+<div ref={containerRef}>
+
+<motion.div  initial="hidden" ref={ref}
+  animate={inView ? "visible" : "hidden"}
+  variants={ScrollVariants}
+  transition={ScrollTransition} 
+className=' flex flex-col w-full items-center'>
         
 <ul className=' flex  w-full justify-center flex-wrap gap-2 mb-2'>
         
@@ -102,11 +113,12 @@ onClick={()=> setTechClicked('firebase') }><b>Firebase</b>
 
 </p>
       
+</motion.div>
+
 </div>
-        
+    
  </section>
-        
-        )   
+ )   
 }
 
 export default MyTechsForMobile
