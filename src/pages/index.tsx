@@ -3,8 +3,6 @@ import MyProjects from "@/components/MyProjects";
 import MyTechs from "@/components/MyTechs";
 import AboutMe from "@/components/AboutMe";
 import MyTechsForMobile from "@/components/MyTechsForMobile";
-// import MyContextProvider from "@/context/MyContext";
-import { MyContextProvider } from "@/context/MyContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
