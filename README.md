@@ -1,6 +1,6 @@
 # 👷🏼 Meu Portfolio
 
-Apresento meu portfólio, onde você poderá conhecer um pouco sobre mim como profissional e minhas habilidades. Aqui, você encontrará meus links de contato e meus projetos detalhados, com links para acessá-los online e explorar seus repositórios.
+Apresento meu portfólio, onde você poderá conhecer um pouco sobre mim como profissional e minhas habilidades. Nele, você encontrará meus links de contato e meus projetos detalhados, com links para acessá-los online e visualisar seus repositórios.
 
 ### 🌐 Link desse projeto
 https://gabriel372.github.io/portfolio/
