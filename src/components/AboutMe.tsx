@@ -1,14 +1,20 @@
 import Image from "next/image"
 import imgProfile from '../images/imgProfile.jpeg'
-import { useState ,useEffect } from "react"
+import { useState ,useEffect,useContext } from "react"
 import Link from "next/link"
 import { FaLinkedin,FaGithub } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { motion } from 'framer-motion';
 import { pageVariants,pageTransition } from "../components/AnimationMotion";
+import { TstateTheme } from "@/types/Types";
+import { MyContext } from "@/context/MyContext";
 
 function AboutMe() {
 const [CursorIsVisible,setCursorIsVisible] = useState(false)
+const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
+const ThemeForCursor = `${ThemeIsDark ? 'bg-gray-300' : 'bg-gray-600'}`
+
+
 
 useEffect(()=>{
 const Interval =  setInterval(()=>setCursorIsVisible((prev)=>!prev),700);  
@@ -30,7 +36,7 @@ return (<motion.div initial="initial" animate="in" exit="out" variants={pageVari
 <h2 className={`fontGameRetro  text-[40px] mb-2 w-screen800:text-[35px] w-screen450:text-[6vw] `}>Programador</h2>
 
 <h2 className={`fontGameRetro text-end text-[45px] flex justify-end w-screen800:text-[40px] w-screen450:text-[7vw] items-center`}>Front end
-<span className={`${!CursorIsVisible && 'invisible'} bg-gray-600 h-14 w-1 w-screen450:h-10`}></span>
+<span className={`${!CursorIsVisible && 'invisible'} ${ThemeForCursor} h-14 w-1 w-screen450:h-10`}></span>
 </h2>
 
 </div>
