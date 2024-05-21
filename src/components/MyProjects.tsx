@@ -28,4 +28,4 @@ return ( <section className=' flex flex-col justify-around mb-8' >
 
 }
 
-export default MyProjects
+export default MyProjects ;
