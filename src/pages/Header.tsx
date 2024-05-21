@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { MyContext } from "@/context/MyContext";
 import { TstateTheme } from "@/types/Types";
 
+
 function Header() {
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
 const ThemeForComponent = ThemeIsDark ? 'text-white bg-gradient-to-t from-black to-gray-400 duration-1000 border-b-gray-800 border border-t-0 border-x-0':

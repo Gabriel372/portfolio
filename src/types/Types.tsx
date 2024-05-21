@@ -20,6 +20,18 @@ export type TstateTheme= {
 ThemeIsDark:boolean
 setThemeIsDark:React.Dispatch<React.SetStateAction<boolean>>; 
 }
+export type Tproject = {
+name:string
+description:string
+techs:string
+linkSite:string
+linkRepository:string
+}
+export type TprojectReceived = {
+item:Tproject    
+}
+
+
 
 
 

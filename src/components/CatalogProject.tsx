@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import CatalogDesktopImg from '../images/catalogoDesktop.png';
 import CatalogMobileImg from '../images/catalogoMobile.png';
+
+import Image from 'next/image';
 import { FaReact } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
-import { SiFirebase } from "react-icons/si";
+import { SiTypescript,SiTailwindcss,SiFirebase } from "react-icons/si";
 import Link from 'next/link';
 import { TbWorldWww } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
@@ -15,13 +14,14 @@ import { motion } from 'framer-motion';
 import { ScrollVariants,ScrollTransition } from './AnimationMotion';
 import { useInView } from 'react-intersection-observer';
 
-function CatalogProject({setModal}:TstateModalProject) {
+function CatalogProject() {
+  const {Modal,setModal} = useContext(MyContext) as TstateModalProject ;
+
 const StyleForTechs = ' pb-1 px-1 rounded-lg flex flex-row max-w-26 items-center'  
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
 const ThemeForComponent = ThemeIsDark ? 'text-white bg-gray-800 duration-500  border-gray-700 '
 :'duration-500 bg-white  from-gray-600 to-white bg-slate-100 border-gray-100 ' ;   
-const TheForTech = ThemeIsDark ? 'bg-slate-900':
-'bg-gray-200' ;
+const ThemeForTech = ThemeIsDark ? 'bg-slate-900':'bg-gray-200' ;
 const [ref, inView] = useInView();
 const containerRef = useRef(null);
 
@@ -59,10 +59,10 @@ que são exibidos na página inicial. Eles também podem adicionar um título pa
 </div>
 
 <div className='mt-4 flex flex-wrap text-lg gap-1'><b className=''>Tecnologias utilizadas:</b>
-<span className={`${StyleForTechs} ${TheForTech} `}><FaReact className=' mr-[2px]'/> React Js</span>
-<span className={`${StyleForTechs} ${TheForTech}`}><SiTypescript className=' mr-[2px]'/> Typescript</span>
-<span className={`${StyleForTechs} ${TheForTech}`}><SiTailwindcss className=' mr-[2px]'/> Tailwind</span>
-<span className={`${StyleForTechs} ${TheForTech}`}><SiFirebase className=' mr-[2px]'/> Firebase</span>
+<span className={`${StyleForTechs} ${ThemeForTech} `}><FaReact className=' mr-[2px]'/> React Js</span>
+<span className={`${StyleForTechs} ${ThemeForTech}`}><SiTypescript className=' mr-[2px]'/> Typescript</span>
+<span className={`${StyleForTechs} ${ThemeForTech}`}><SiTailwindcss className=' mr-[2px]'/> Tailwind</span>
+<span className={`${StyleForTechs} ${ThemeForTech}`}><SiFirebase className=' mr-[2px]'/> Firebase</span>
 </div>
 
 <div className=' flex justify-around mt-4 flex-wrap gap-1 w-screen350:gap-2'>
