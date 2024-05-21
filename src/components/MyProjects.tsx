@@ -17,10 +17,8 @@ return ( <section className=' flex flex-col justify-around mb-8' >
     <h4 className=' text-3xl text-center mb-6'>Meus projetos</h4>
 
 <ul className='flex flex-wrap  w-screen850:justify-center justify-around gap-8 w-screen800:gap-5'>
-{ListProjects.map((item)=>( <Project item={item}/>))}
-{/* <CatalogProject /> */}
-{/* <RegistMemberProject Modal={Modal} setModal={setModal}/> */}
-
+{ListProjects.map((item,index)=>( 
+<li key={index}><Project item={item} /></li>))}
 </ul>
 <ModalProject/>
 

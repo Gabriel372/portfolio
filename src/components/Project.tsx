@@ -47,7 +47,7 @@ return ''
 }
 
 return (
-<li ref={containerRef}>
+<div ref={containerRef} >
 
 <div ref={ref}>
 
@@ -94,6 +94,6 @@ className=' bg-black text-white rounded-lg px-2 flex flex-row items-center py-2 
 </motion.div>
 </div>
 
-</li>
+</div>
 )  }
 export default Project ;

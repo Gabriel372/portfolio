@@ -14,8 +14,6 @@ const [CursorIsVisible,setCursorIsVisible] = useState(false)
 const {ThemeIsDark} = useContext(MyContext) as TstateTheme ;
 const ThemeForCursor = `${ThemeIsDark ? 'bg-gray-300' : 'bg-gray-600'}`
 
-
-
 useEffect(()=>{
 const Interval =  setInterval(()=>setCursorIsVisible((prev)=>!prev),700);  
 return ()=> clearInterval(Interval)
@@ -43,7 +41,7 @@ return (<motion.div initial="initial" animate="in" exit="out" variants={pageVari
 
 <div className="  rounded-tl-3xl rounded-br-3xl animate-float hidden w-screen900:flex justify-center"> 
 <div className="  overflow-hidden rounded-tl-3xl rounded-br-3xl max-h-[20rem] shadow-2xl">
-    <Image src={imgProfile} alt='image' height={500}   className=""/>
+    <Image src={imgProfile} alt='image' height={500}   className=" "/>
 </div>
 </div>
 
