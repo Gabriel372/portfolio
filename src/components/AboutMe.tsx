@@ -46,10 +46,7 @@ return (<motion.div initial="initial" animate="in" exit="out" variants={pageVari
 </div>
 
 <p className=" text-xl text-center mt-6">
-Apaixonado por tecnologia e impulsionado pelo desejo de criar experiências digitais excelentes, sou <b>Gabriel Brandão</b> , programador front-end com foco em React.js.
-Minha missão é transformar ideias em interfaces eficientes e agradáveis que facilitem a vida das pessoas e gerem um impacto positivo no mundo digital.
-Com entusiasmo e dedicação, busco aprimorar minhas habilidades continuamente, explorando as últimas tendências e tecnologias para oferecer soluções inovadoras e personalizadas.
-Acredito no poder da tecnologia para resolver problemas e aproximar pessoas.
+Oi, meu nome é <b>Gabriel Brandão</b> sou um Programador dedicado, meu foco está na criação/manutenção de interfaces eficientes e agradáveis que geram uma boa experiência ao usuário. Possuo habilidades sólidas em diversas tecnologias, incluindo <b>React Js, Javascript, Typescript, Html 5, Css 3, Tailwind, Next js e Bootstrap.</b> Estou constantemente aprendendo e adquirindo mais conhecimento para aprimorar as habilidades que possuo. Meu objetivo é causar um impacto positivo no mundo digital, criando soluções que atendam às necessidades dos usuários e superem suas expectativas.
 </p>
 
 <div className=' mt-3 '>

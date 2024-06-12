@@ -88,7 +88,7 @@ className={`bg-black text-white rounded-lg px-2 flex flex-row items-center max-w
 
 <Link href={item.linkRepository}
 className=' bg-black text-white rounded-lg px-2 flex flex-row items-center py-2 justify-center w-full hover:bg-gray-700 max-h-11 border border-gray-700 max-w-40'>
-<FaGithub className=' mr-[2px] text-xl'/>Ver repositório</Link>
+<FaGithub className=' mr-[2px] text-xl'/>Ver Código</Link>
 </div>
 
 </motion.div>
